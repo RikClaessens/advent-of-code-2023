@@ -46,16 +46,13 @@ export const part2 = (input: string[]): number => {
   input.forEach((line) => {
     const regex = /(?=(one|two|three|four|five|six|seven|eight|nine|\d))/g;
     const matches = Array.from(line.matchAll(regex), (x) => x[1]);
-    const firstDigit = matches?.[0] || '';
-    const lastDigit = matches?.[matches.length - 1] || '';
+    const firstDigit = matches?.[0];
+    const lastDigit = matches?.[matches.length - 1];
     const twoDigitNumber = Number.parseInt(
       `${parseDigit(firstDigit)}${parseDigit(lastDigit)}`,
     );
 
     sum += twoDigitNumber;
-    console.log(
-      `${line}: ${firstDigit} + ${lastDigit} = ${twoDigitNumber} (${sum}) [${matches}]`,
-    );
   });
   return sum;
 };
@@ -64,5 +61,3 @@ export const part2 = (input: string[]): number => {
   console.log('Part 1: ' + part1(input));
   console.log('Part 2: ' + part2(input));
 })();
-
-// 54100 too high
