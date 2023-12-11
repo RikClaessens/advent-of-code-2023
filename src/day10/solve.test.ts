@@ -18,8 +18,8 @@ test(`Day ${day} part 1`, () => {
 });
 
 test(`Day ${day} part 2`, () => {
-  // expect(part2(testInput3)).toBe(4);
-  // expect(part2(testInput4)).toBe(4);
-  // expect(part2(testInput5)).toBe(8);
-  // expect(part2(testInput6)).toBe(10);
+  expect(part2(testInput3)).toBe(4);
+  expect(part2(testInput4)).toBe(4);
+  expect(part2(testInput5)).toBe(8);
+  expect(part2(testInput6)).toBe(10);
 });
