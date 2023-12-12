@@ -1,4 +1,5 @@
 import { getInput } from '../getInput';
+import { sum } from '../utils';
 
 export const day = 'day11';
 export const testInput = getInput(`src/${day}/test.txt`);
@@ -97,18 +98,12 @@ export const part1 = (input: string[], expand: number): number => {
   const map = getMap(input);
   const { rows, cols } = getExpandedRowsAndCols(map);
 
-  return getDistances(getGalaxies(map), rows, cols, expand).reduce(
-    (sum, d) => (sum += d),
-    0,
-  );
+  return getDistances(getGalaxies(map), rows, cols, expand).reduce(sum);
 };
 export const part2 = (input: string[], expand: number): number => {
   const map = getMap(input);
   const { rows, cols } = getExpandedRowsAndCols(map);
-  return getDistances(getGalaxies(map), rows, cols, expand).reduce(
-    (sum, d) => (sum += d),
-    0,
-  );
+  return getDistances(getGalaxies(map), rows, cols, expand).reduce(sum);
 };
 
 (() => {

@@ -1,4 +1,5 @@
 import { getInput } from '../getInput';
+import { sum } from '../utils';
 
 export const day = 'day09';
 export const testInput = getInput(`src/${day}/test.txt`);
@@ -46,14 +47,14 @@ export const part1 = (input: string[]): number => {
   const results = input
     .map((l) => l.split(' ').map((n) => Number.parseInt(n)))
     .map(getNextInSequence);
-  return results.reduce((sum, n) => (sum += n), 0);
+  return results.reduce(sum);
 };
 
 export const part2 = (input: string[]): number => {
   const results = input
     .map((l) => l.split(' ').map((n) => Number.parseInt(n)))
     .map(getPreviousInSequence);
-  return results.reduce((sum, n) => (sum += n), 0);
+  return results.reduce(sum);
 };
 
 (() => {
