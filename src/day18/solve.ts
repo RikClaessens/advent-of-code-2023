@@ -6,6 +6,7 @@ const input = getInput(`src/${day}/input.txt`);
 
 type GetDirDist = (step: string) => [string, number];
 
+// https://en.wikipedia.org/wiki/Shoelace_formula
 const getArea = (input: string[], getDirDist: GetDirDist): number => {
   let x = 0;
   let y = 0;
